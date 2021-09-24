@@ -8,23 +8,18 @@ const terminal = require("./style/components")
 const customTheme = require("./style/customTheme")
 
 // Import typography
-const { standard, sm, md, lg } = require("./style/customTypography")
+const { standard, style } = require("./style/customTypography")
 
 module.exports = {
-	darkMode: "class",
+	darkMode: false,
 	theme: {
 		extend: {
 			...customTheme,
 			typography: (theme) => ({
 				DEFAULT: {
-					css: { ...standard(theme), ...md(theme) }
+					css: { ...standard(theme), ...style(theme) }
 				}
 			})
-		}
-	},
-	variants: {
-		extend: {
-			typography: ["dark"]
 		}
 	},
 	plugins: [

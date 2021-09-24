@@ -3,9 +3,14 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Fredoka+One");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap");
+@import url("./hack.font.css");
+
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+/* Import last for specificity */
+@import url("./dracula.highlight.css");
 
 @layer utilities {
 	.text-outline-xs {
@@ -80,15 +85,6 @@
 	.mobile-menu-btn,
 	nav a {
 		@apply text-green-400 hover:text-green-200 hover:text-glow-green;
-	}
-
-	/* Snippet container */
-	.snippet-container {
-		@apply flex place-items-center justify-items-center;
-	}
-	/* Snippet terminal sizes */
-	.snippet {
-		@apply mb-5;
 	}
 
 	/* Fix Emojis from being new lined */

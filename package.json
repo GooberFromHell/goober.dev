@@ -9,12 +9,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^10.3.4",
-    "postcss": "^8.3.6",
-    "tailwindcss": "^2.2.15"
-  },
-  "dependencies": {
     "@tailwindcss/typography": "^0.4.1",
-    "postcss-import": "^14.0.2"
+    "autoprefixer": "^10.3.5",
+    "cssnano": "^5.0.8",
+    "postcss": "^8.3.7",
+    "postcss-import": "^14.0.2",
+    "tailwindcss": "^2.2.15"
   }
 }
