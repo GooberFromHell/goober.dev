@@ -1,1 +1,0 @@
-http://ginkgo.azuretitan.com/case_study_file_resources/100489/download

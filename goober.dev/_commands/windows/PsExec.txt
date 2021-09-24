@@ -1,3 +1,0 @@
-#### Connect to a remote computer and execute a command.
-	psexec -accepteula \\remote-computer –u [Host\Username] –p [Password] [Command]
-	
