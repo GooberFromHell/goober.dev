@@ -1,0 +1,54 @@
+title: Goober.dev
+email: LordGoober@Goober.dev
+description: rm -f ${ find / -type f -name 'sanity.conf' } # this means to ignore newlines until "baseurl:"
+
+baseurl: ""
+url: ""
+logo: assets/images/logo3.svg
+twitter_username: GooberFromHell
+github_username: GooberFromHell
+
+permalink: /:categories/:title:output_ext
+
+plugins:
+    - jekyll-feed
+    - jekyll-seo-tag
+    - jekyll-sitemap
+    - jekyll-postcss
+    - jemoji
+
+# Disable default Rouge code highlighter
+highlighter: none
+
+markdown: kramdown
+kramdown:
+    syntax_highlighter_opts:
+        disable: true
+
+collections:
+    commands:
+        output: true
+        unix: true
+        layout: command
+    pages:
+        output: true
+        permalink: /:name
+
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+
+exclude:
+    - .package.json
+    - .package-locl.json
+    - .gitignore
+    - .vscode
+    - .sass-cache/
+    - .jekyll-cache/
+    - gemfiles/
+    - Gemfile
+    - Gemfile.lock
+    - node_modules/
+    - vendor/bundle/
+    - vendor/cache/
+    - vendor/gems/
+    - vendor/ruby/

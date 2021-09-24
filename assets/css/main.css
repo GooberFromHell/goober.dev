@@ -1,0 +1,111 @@
+---
+---
+
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap");
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer utilities {
+	.text-outline-xs {
+		-webkit-text-stroke: 1px;
+		-webkit-text-stroke-color: #010101;
+	}
+	,
+	.text-outline-sm {
+		-webkit-text-stroke: 2px;
+		-webkit-text-stroke-color: #010101;
+	}
+	.text-outline-md {
+		-webkit-text-stroke: 4px;
+		-webkit-text-stroke-color: #010101;
+	}
+	.text-outline-lg {
+		-webkit-text-stroke: 5px;
+		-webkit-text-stroke-color: #010101;
+	}
+	@variants hover {
+		.text-glow-green {
+			text-shadow: 0 0 20px rgba(150, 255, 150, 0.6), 0 0 5px rgba(0, 150, 0, 0.6);
+		}
+	}
+}
+
+@layer base {
+	html,
+	body {
+		@apply w-full h-full text-green-300 bg-accent-900 font-mont;
+	}
+
+	h1,
+	h2 {
+		@apply text-green-500 text-outline-sm font-fred;
+	}
+
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply text-green-500 text-outline-xs font-fred;
+	}
+
+	h1 {
+		@apply text-7xl;
+	}
+	h2 {
+		@apply text-6xl;
+	}
+	h3 {
+		@apply text-5xl;
+	}
+
+	ul > li::before,
+	ol > li::before {
+		@apply font-fred text-accent-300;
+	}
+
+	a {
+		@apply text-pink-600 no-underline;
+	}
+
+	strong {
+		@apply font-bold font-fred;
+	}
+
+	blockquote {
+		@apply border-l border-accent-700 border-opacity-80;
+	}
+	/* Navigation buttons  */
+	.mobile-menu-btn,
+	nav a {
+		@apply text-green-400 hover:text-green-200 hover:text-glow-green;
+	}
+
+	/* Snippet container */
+	.snippet-container {
+		@apply flex place-items-center justify-items-center;
+	}
+	/* Snippet terminal sizes */
+	.snippet {
+		@apply mb-5;
+	}
+
+	/* Fix Emojis from being new lined */
+	img.emoji {
+		@apply inline-block;
+	}
+
+	.blink-border {
+		animation: border_cursor 1s linear infinite;
+	}
+
+	@keyframes border_cursor {
+		0% {
+			border-right: 3px solid rgba(167, 243, 208);
+		}
+		100% {
+			border-right: none;
+		}
+	}
+}

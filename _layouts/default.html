@@ -1,0 +1,15 @@
+---
+layout: code_fix
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+	<head>
+		{%- include head.html -%}
+	</head>
+	<body>
+		{% include nav.html %}
+		<div class="flex flex-col justify-center min-h-full p-0 sm:p-4 xs:p-4">{{ content }}</div>
+		{%- include footer.html -%} {%- include scripts.html -%}
+	</body>
+</html>
