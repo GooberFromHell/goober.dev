@@ -1,0 +1,46 @@
+---
+---
+
+/* Code block terminals */
+.hljs {
+	padding: 0 !important;
+}
+
+/* Masonary grid */
+.term-container {
+	@apply w-full h-full p-8 place-content-center;
+}
+.terminal {
+	@apply inline-block mt-2 mr-2 text-xs origin-center bg-gray-700 rounded-sm;
+}
+
+.term-container > .terminal {
+	@apply: m-4 ml-0;
+}
+.term-container > .terminal:hover {
+	@apply z-10 transition-all ease-in-out;
+}
+.terminal-bar {
+	@apply flex justify-end m-1 bg-gray-700 rounded-t-sm;
+}
+.terminal-bar > div {
+	@apply w-2 h-2 ml-2 rounded-full;
+}
+.terminal-bar > .close {
+	@apply bg-red-500;
+}
+.terminal-bar > .max {
+	@apply bg-yellow-400;
+}
+.terminal-bar > .min {
+	@apply bg-green-500;
+}
+.terminal code:before {
+	content: "> ";
+	@apply m-1 text-green-600;
+}
+.terminal code,
+.terminal .terminal-content {
+	box-shadow: inset 0 4px 10px -1px rgb(0 0 0 / 0.2), inset 0 2px 4px -3px rgb(0 0 0 / 0.6);
+	@apply block p-2 m-1 bg-gray-800 rounded-sm;
+}

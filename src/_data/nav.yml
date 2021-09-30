@@ -1,0 +1,15 @@
+- title: home
+  link: /
+  icon: fab fa-dev
+- title: cmds
+  link: /cmds
+  icon: fas fa-terminal
+- title: posts
+  link: /posts
+  icon: far fa-newspaper
+- title: about
+  link: /about.html
+  icon: fas fa-user-astronaut
+- title: contact
+  link: /contact.html
+  icon: far fa-comment-alt

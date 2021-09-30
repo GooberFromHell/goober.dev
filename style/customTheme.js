@@ -1,5 +1,6 @@
 module.exports = {
 	colors: {
+		mute: "#c96daa",
 		green: {
 			50: "#f7fbfe",
 			100: "#c7e9f1",

@@ -1,0 +1,15 @@
+---
+---
+
+.blink-border {
+	animation: border_cursor 1s linear infinite;
+}
+
+@keyframes border_cursor {
+	0% {
+		border-right: 3px solid rgba(167, 243, 208);
+	}
+	100% {
+		border-right: none;
+	}
+}

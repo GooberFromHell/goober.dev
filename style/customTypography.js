@@ -15,12 +15,14 @@ const standard = (theme) => {
 		color: theme("colors.green.400")
 	}
 }
-
-const style = (theme) => {
+const sm = (theme) => {
+	return {}
+}
+const md = (theme) => {
 	return {
 		"ul > li::before": {},
 		"ol > li::before": {
-			top: "12%",
+			top: "11%",
 			display: "flex",
 			justifyContent: "center",
 			alignItems: "center",
@@ -35,5 +37,8 @@ const style = (theme) => {
 		}
 	}
 }
+const lg = (theme) => {
+	return {}
+}
 
-module.exports = { standard, style }
+module.exports = { standard, md }
