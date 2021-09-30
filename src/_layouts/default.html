@@ -1,0 +1,13 @@
+---
+layout: code_fix
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+	<head>
+		{%- include head.html -%}
+	</head>
+	<body>
+		{% include nav.html %} {{content}} {%- include footer.html -%} {%- include scripts.html -%}
+	</body>
+</html>

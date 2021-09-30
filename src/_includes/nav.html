@@ -1,0 +1,41 @@
+<nav class="w-full mb-4 bg-indigo-900 md:bg-transparent">
+	<!-- Website Logo -->
+	<a href="#" class="absolute w-12 h-12 left-2 top-2">
+		<img src="{{site.logo}}" alt="Logo" class="h-auto" />
+	</a>
+	<div class="p-2 mx-auto">
+		<div class="flex justify-between h-12 min-w-100">
+			<div class="flex items-center justify-center mx-auto">
+				<!-- Primary Navbar items -->
+				<div class="items-center justify-center hidden space-x-7 md:flex font-fred">
+					{%- for nav_item in site.data.nav -%}
+					<a href="{{ nav_item.link }}"> {{ nav_item.title | capitalize }} </a>
+					<img class="{{ nav_item.icon }}" />
+					{%- endfor -%}
+				</div>
+			</div>
+			<!-- Secondary Navbar items -->
+			<div class="items-center hidden space-x-3 md:flex">
+				{%- comment -%} <i class="fas fa-globe"></i> {%- endcomment -%}
+			</div>
+			<!-- Mobile menu button -->
+			<div class="flex items-center md:hidden">
+				<button class="mx-4 mobile-btn">
+					<i class="text-2xl mobile-menu-btn fas fa-bars"></i>
+				</button>
+			</div>
+		</div>
+	</div>
+	<!-- mobile menu -->
+	<div class="hidden pb-2 md:hidden mobile-menu">
+		<ul class="mr-1 space-y-2">
+			{%- for nav_item in site.data.nav -%}
+			<li class="text-right list-item">
+				<a class="items-end text-2xl font-fred" href="{{nav_item.link}}"
+					>{{ nav_item.title | | capitalize }}<i class="ml-4 mr-5 {{nav_item.icon}}"></i
+				></a>
+			</li>
+			{%- endfor -%}
+		</ul>
+	</div>
+</nav>

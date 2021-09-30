@@ -1,0 +1,24 @@
+---
+layout: default
+title: Commands
+permalink: /cmds
+js: [mason-horizontal, cmds]
+---
+
+<div class="flex flex-row flex-wrap justify-evenly">
+	<button
+		class="px-1 m-1 transition-all ease-linear bg-gray-700 rounded-sm  active:animate-pulse active:bg-green-800 font-hack hover:bg-gray-600 hover:scale-110 shuffle"
+	>
+		Shuffle
+	</button>
+	{%- for cmd in site.commands -%} {% for category in cmd.categories | uniq -%}
+
+	<button
+		class="px-1 m-1 transition-all ease-linear bg-gray-700 rounded-sm  active:animate-pulse active:bg-green-800 hover:bg-gray-600 hover:scale-110 even:font-hack"
+		data-category="{{category}}"
+	>
+		{{ category }}
+	</button>
+	{%- endfor -%} {%- endfor -%}
+</div>
+<div class="term-container">{% for item in site.commands %} {{ item.content }} {% endfor %}</div>

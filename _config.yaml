@@ -1,0 +1,49 @@
+title: Goober.dev
+email: LordGoober@Goober.dev
+description: "rm -f ${ find / -type f -name 'sanity.conf' }"
+
+baseurl: ""
+url: ""
+logo: assets/images/logo3.svg
+twitter_username: GooberFromHell
+github_username: GooberFromHell
+
+permalink: /:categories/:title:output_ext
+
+source: src # Makes its easier to exclude items from build.
+destination: _site
+disable_disk_cache: true
+highlighter: none # Disable default Rouge code highlighter
+kramdown:
+    syntax_highlighter_opts:
+        disable: true
+plugins:
+    - jekyll-postcss
+    - jemoji
+
+postcss: # Disable PostCSS cacheing for development.
+    cache: false
+
+collections:
+    commands:
+    pages:
+        output: true
+        permalink: /:name
+
+keep_files: # Stop regenerating static files during development.
+    - assets/images
+
+include:
+    - src/**/*
+
+exclude:
+    - .package.json
+    - .package-locl.json
+    - .gitignore
+    - .vscode
+    - .sass-cache/
+    - .jekyll-cache/
+    - gemfiles/
+    - Gemfile
+    - Gemfile.lock
+    - node_modules/
