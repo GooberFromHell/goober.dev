@@ -6,3 +6,6 @@ vendor
 node_modules
 .vscode
 .prettierignore
+.gitignore
+.vscode
+
