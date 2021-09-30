@@ -1,7 +1,0 @@
-js:
-    - "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    - "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"
-    - "assets/js/nav.js"
-style:
-    - "https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-    - "assets/css/main.css"

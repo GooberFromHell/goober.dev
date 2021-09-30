@@ -1,2 +1,0 @@
-#### Display previous commands executed in the command prompt
-	doskey /history

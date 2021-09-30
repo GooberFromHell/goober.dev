@@ -1,2 +1,0 @@
-#### Get Driver version information
-	sigcheck -accepteula -n <DriverName>

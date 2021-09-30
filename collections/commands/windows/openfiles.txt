@@ -1,2 +1,0 @@
-#### Display all open files on the system
-	openfiles /query
