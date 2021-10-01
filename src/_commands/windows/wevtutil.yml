@@ -13,8 +13,8 @@
 - command: wevutil
   description: Search for event within a date range:
   code: [```wevtutil qe security "/q:*[System/EventID=4720] and *[System[TimeCreated[@SystemTime>='2019-12-23T00:00:00' and @SystemTime<='2019-12-31T00:00:00']]]"```,
-	```wevtutil qe security "/q:*[System[TimeCreated[@SystemTime>='2019-12-23T00:00:00' and @SystemTime<='2017-01-01T00:00:00']]]"```,
-	```wevtutil qe security "/q:*[System[TimeCreated[@SystemTime>='2019-12-23T00:00:00' and @SystemTime<='2017-01-01T00:00:00']]]"```]
+```wevtutil qe security "/q:*[System[TimeCreated[@SystemTime>='2019-12-23T00:00:00' and @SystemTime<='2017-01-01T00:00:00']]]"```,
+```wevtutil qe security "/q:*[System[TimeCreated[@SystemTime>='2019-12-23T00:00:00' and @SystemTime<='2017-01-01T00:00:00']]]"```]
 - command: wevutil
   description: Another Way to search for successful logins
   code: ```wevtutil qe security /q:"*/*[*[@*='TargetUsername']='Administrator'] and */*[EventID=4624]"```
