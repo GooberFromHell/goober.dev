@@ -1,0 +1,14 @@
+more-info: https://docs.microsoft.com/en-us/sysinternals/downloads/autoruns
+commands:
+- description: Check system boot autorun startup.
+  code:```autoruns -b | more```
+  categories: [enumeration]
+- description: Check startups for users.
+  code:```autoruns <Username> | more```
+  categories: [enumeration]
+- description: Check appinit_dllls.
+  code:```autoruns -d```
+  categories: [enumeration]
+- description: Find Windows version.
+  code:```autoruns```
+  categories: [enumeration]
