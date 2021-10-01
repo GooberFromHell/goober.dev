@@ -1,0 +1,93 @@
+
+- command: powershell
+  description: Set Get-Credentials to prompt in terminal.
+  code: ```Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\PowerShell\1\ShellIds" -Name ConsolePrompting -Value $true
+```
+- command: powershell
+  description: Store user credentials for use with CIMSession or Invoke-Commands.
+  code: ```$credentals = Get-Credential <UserName>
+```
+- command: powershell
+  description: Options for PowerShell versions <= 2.0.
+  code: ```$options = New-CimSessionOption -Protocol dcom
+```
+- command: powershell
+  description: Create  new CIM session.
+  code: ```$session = New-CimSession -SessionOption $o -Credential $c
+```
+
+- command: powershell
+  description: Searching Windows Events
+  code: ```Get-WinEvent -FilterHashtable @{LogName='<LogName>';Id ='<EventId>'} -MaxEvents 1
+```
+
+- command: powershell
+  description: Enumerate a Process
+  code: ```New-CimInstance -Class win32_process -filter "name like '%<Processname>%'" | select * | more
+```
+
+- command: powershell
+  description: Find a WMI service.
+  code: ```Get-WmiObject Win32_Service | Where {$_.Name -like "<ServiceName>"}
+```
+
+- command: powershell
+  description: Get all running service on host
+  code: ```Get-WmiObject Win32_Service -filter "state like 'Running'" | select name,state,startmode | format-table
+```
+
+- command: powershell
+  description: Query service StartMode
+  code: ```Get-WmiObject -computername ,ComputerName> -credential $c -query "select * from win32_service where startmode='auto'"
+```
+
+- command: powershell
+  description: Find all disables services.
+  code: ```Get-CimInstance -query "select * from Win32_Service where startmode='disabled'" | select name
+```
+
+- command: powershell
+  description: Start/Stop service on remote host
+  code: ```$s = New-CimSession -ComputerName <Hostname/IP> -Credential <UserName>
+Get-CimInstance Win32_Service -Filter "Name='<ServiceName>'" -CimSession $s | Invoke-CimMethod -Name StartService
+```
+
+- command: powershell
+  description: Check status of service on remote host
+  code: ```$s = New-CimSession -ComputerName <Hostname/IP> -Credential <UserName>
+Get-CimInstance Win32_Service -Filter "Name='<ServiceName>'" -CimSession $s | Select Name,State
+```
+
+- command: powershell
+  description: Find a process based on its name and retrieve its full path.
+  code: ```get-process | where {$_.name -like "<ProcessName>"} | select path
+```
+
+- command: powershell
+  description: Get processes running on remote machine.
+  code: ```$cred = get-credential <Username>
+$s = new-pssession -computername <ComputerName> -credential $cred
+Invoke-Command -session $s {get-process} | select name
+```
+
+- command: powershell
+  description: Uninstall program on remote host.
+  code: ```(Get-WmiObject Win32_Product -computername win7 -credential <UserName> -filter "Name like '%Google%'").Uninstall()
+(Get-WmiObject Win32_Product -computername win7 -credential $c -Filter "Name like '%Ask'").Uninstall()
+(Get-WmiObject Win32_Product -computername <hostname/ip> -credential <username. -filter "Name like '%<programname%'").Uninstall()
+```
+- command: powershell
+  description: Get all aliases for a command.
+  code: ```alias | select name,ResolvedCommand | where {$_.name -like "<PowershellModuleItUses>"}
+```
+- command: powershell
+  description: Disconnect from PSSessions.
+  code: ```Remove-PSSession <SessionName>,<SessionName>
+```
+		
+- command: powershell
+  description: ## get a CIM Session with options to communicate with Hosts with PowerShell 2.0 or less.
+  code: ```$cred = get-credential <UserName>
+$option = new-cimsessionoption -protocol dcom
+$cimsession = new-cimsession -computername win7 -credential $cred -sessionoption $option
+```
