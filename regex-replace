@@ -1,0 +1,5 @@
+Replace t itles with first header
+
+(title:)\s(?!\w)
+(.|\n)*
+-{3}#{3}\s(\w+)

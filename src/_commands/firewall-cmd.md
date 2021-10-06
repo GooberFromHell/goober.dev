@@ -2,7 +2,7 @@
 title: firewall-cmd
 tags: [unix, security, firewall]
 updated: 2021-09-27
-categories: Auditing Firewall IPTables
+categories: [Auditing, Firewall, IPTables]
 ---
 
 
@@ -77,18 +77,18 @@ categories: Auditing Firewall IPTables
 
 Resource: **[Rich Syntax Arguments](<(https://fedoraproject.org/wiki/Features/FirewalldRichLanguage#Handle_rich_rules_with_the_command_line_client)>)**
 
-```shell
+```bash
 firewall-cmd --permanent --zone=public --add-rich-rule='rule family=ipv4 source address=10.8.8.0/24 masquerade'
 ```
 
 
-```shell
+```bash
 firewall-cmd --add-rich-rule='rule family=ipv4 source address=192.168.1.0/24 service name=ssh log prefix="SSH Access" level="notice" accept'
 ```
 
 ##### Direct Syntax
 
-```shell
+```bash
 firewall-cmd --permanent --direct --add-rule ipv4 nat POSTROUTING 0 -o enp0s8 -j MASQUERADE
 ```
 
@@ -106,47 +106,47 @@ Always add **--permanent** to save changes to the firewalld <br>configuration, a
 
 #### View rules
 
-```Shell
+```bash
 firewall-cmd --list-all-zones
 ```
 
 ### List direct rules
-```Shell
+```bash
 firewall-cmd --direct --get-all-rules
 ```
 
 #### Reload firewalld with zero down-time.
 
-```Shell
+```bash
 firewall-cmd --reload-
 ```
 
 ### Block Outbound traffic
-```Shell
-// Can add --dport, --sport
+```bash
+## Can add --dport, --sport
 firewall-cmd --direct --add-rule ipv4 filter OUTPUT 0 -p tcp -m tcp -d <IPAddress> -j DROP
 ```
 
 #### Set Default Zone
 
-```Shell
+```bash
 firewal-cmd -set-default-zone=<Zone>
 ```
 
 #### Route all Traffic from a network into a zone.
 
-```Shell
+```bash
 firewall-cmd --permanent --zone=<Zone> --add-source=<NetWorkOrHost>/<24,etc..>
 ```
 
 #### Route specific service into a zone
 
-```shell
+```bash
 firewall-cmd --permanent --zone=<Zone> --add-service=<ServiceByName>
 ```
  
 ### Remove a sevice from DEFAULT zone
-```Shell
+```bash
 firewall-cmd --remove-service=<ServiceName>
 ```
 

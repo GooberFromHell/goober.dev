@@ -1,34 +1,51 @@
-### iptables
+---
+title: iptables
+tags: [security, firewall, unix, iptables]
+updated: 2021-09-30
+categories: [unix]
+---
 
-#### Add rule to table (Not  == \! before the option)
-```Shell
-iptables -t [TABLE] -A [CHAIN][RULES] -j [TARGET]
+:::info
+### Set default policys
+$TableName | FILTER, NAT, MANGLE, RAW
+$Chain 	| FORWARD, OUTPUT, INPUT
+$Policy | ACCEPT, DROP, REJECT
+$Rule | [user defined IPTables rule](https://ipset.netfilter.org/iptables.man.html)
+$Target |  ACCEPT, DROP, REJECT, LOG, DNAT, SNAT, REDIRECT
+:::
+
+```bash
+# Append rule to table.
+iptables -t $TableName -A $Chain $Rule -j $Policy
 ```
 
-#### View rules (omit <TableName for default fileter table)
-```Shell
-iptables -L -n -t <TableName> --line-numbers -L (Optional: <ChainName>)
+```bash
+# View rules 
+iptables -L -n -t $TableName --line-numbers -L
 ```
 
-#### Delete a rule
-```Shell
-iptables -t <TableName> -D <ChainName> <LineNumber>
+```bash
+# Delete a rule.
+iptables -t $TableName -D $ChainName $LineNumber
 ```
 
-#### look for statefull firewalls on the network.
-```Shell
-tcpdump -s0 -nn net <TargetsNetwork> & nmap -sA -Pn <TargetIP/Network> -p <PortsIfNeeded> && kill %
+```bash
+# Search for Statefull firewalls in network.
+tcpdump -s0 -nn net $TargetsNetwork & nmap -sA -Pn $TargetIP -p $Ports && kill %
 ```
 
-#### Set default policy (default table is the filter table)
-```Shell
-iptables -P <Chain> -t <Table>
+```bash
+# Flush all rules
+iptables -t $TableName -F 
 ```
 
+```bash
+# Remove all user-defined chains
+iptables -t $TableName -X
+```
 
-iptables -t filter -F (Flush all rules from the filter table)
-iptables -t nat -F (Flush all rules from the NAT table)
-iptables -X (Remove all user-defined chains from the filter table)
-iptables -P INPUT ACCEPT (Set the default policy on the INPUT chain of the filter table)
-iptables -P OUTPUT ACCEPT (Set the default policy on the OUTPUT chain of the filter table)
-iptables -P FORWARD ACCEPT (Set the default policy on the FORWARD chain of the filter table)
+```bash
+
+iptables -t $TableName -P $Chain $Policy 
+
+```

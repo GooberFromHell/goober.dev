@@ -1,5 +1,10 @@
-### SMF - Ports to Services
-```shell
+---
+title: SMF
+tags: []
+updated: 2021-09-30
+categories: []
+--- - Ports to Services
+```bash
  for i in `ls /proc`; do
  
     proto=""

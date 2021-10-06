@@ -1,20 +1,26 @@
-### find 
+---
+title: find
+tags: []
+updated: 2021-09-30
+categories: []
+--- 
+
 #### Display all symlinks in a directory recursively.
-```Shell
+```bash
 find . -type l -ls
 ```
 
 #### Display all syslinks in a single directory .
-```Shell
+```bash
 find . -maxdepth 1 -type l -ls
 ```
 
 #### Search the entire system for somthing.
-```Shell
+```bash
 find / -name <filename>
 ```
 
 #### Search for files and run a command on each one.
-```Shell
+```bash
 find <directory> -name <FileName>.<Extension> -exec <CommnadToRun> \{\} \;
 ```

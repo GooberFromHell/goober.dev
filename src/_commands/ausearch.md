@@ -8,14 +8,14 @@ categories: [Auditing]
 ### ausearch
 
 #### find user accoutn creation dates and times
-```Shell
+```bash
 ausearch -x useradd -i 
 ```
-```Shell
+```bash
 aureport -m | grep <UserName>
 ```
 
 #### find when a user ran a particular command.
-```Shell
+```bash
 ausearch -m USER_START -x <Command> -ts DD/MM/YYYY HH:MM:SS | grep <UserName>
 ```

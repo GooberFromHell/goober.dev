@@ -1,4 +1,9 @@
-unset HISTFILE
+---
+title: 
+tags: []
+updated: 2021-09-30
+categories: []
+---unset HISTFILE
 w
 date -u
 date

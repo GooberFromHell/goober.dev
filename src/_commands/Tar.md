@@ -1,4 +1,9 @@
-#### Created a archive file for all file in a directory with directory structure.
+---
+title: 
+tags: []
+updated: 2021-09-30
+categories: []
+---#### Created a archive file for all file in a directory with directory structure.
 tar -cf /<FullPathToTarFile>.tar /Path/To/Directory
 
 #### Created a archive file for all file in a directory WITHOUT directory structure.

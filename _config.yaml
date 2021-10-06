@@ -13,10 +13,16 @@ permalink: /:categories/:title:output_ext
 source: src # Makes its easier to exclude items from build.
 destination: _site
 disable_disk_cache: true
-highlighter: none # Disable default Rouge code highlighter
+markdown: kramdown
 kramdown:
+    syntax_highlighter: none
     syntax_highlighter_opts:
-        disable: true
+        default_lang: shell
+        css_class: "hljs"
+        span:
+            line_numbers: false
+        block:
+            line_numbers: true
 plugins:
     - jekyll-postcss
     - jemoji

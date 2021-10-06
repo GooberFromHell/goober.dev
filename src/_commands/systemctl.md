@@ -1,41 +1,46 @@
-### systemctl
+---
+title: systemctl
+tags: []
+updated: 2021-09-30
+categories: []
+---
 
 #### Display boot chain in Systemd
-```Shell
+```bash
 systemd-analyze
 ```
 
 #### List boot services
-```Shell
+```bash
 systemctl list-unit-files --type service
 ```
 
 #### Display total service enabled.
-```Shell
+```bash
 systemctl list-unit-files -t service | grep enabled | wc -l
 ```
 
 #### Display all Loaded and active units.
-```Shell
+```bash
 systemctl list-units
 ```
 
 #### Display all unit files that are on the system.
-```Shell
+```bash
 systemctl list-unit-files
 ```
 
 #### Enable systemd service at boot.
-```Shell
+```bash
 systemctl enable <ServiceName>
 ```
 
 #### list dependencies for unit
-```Shell
+```bash
 systemctl list-dependencies <UnitName>
 ```
 
 #### list units that are dependent on a unit.
-```Shell
+```bash
 systemctl list-dependencies <UnitName> --reverse
 ```

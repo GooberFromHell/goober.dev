@@ -1,26 +1,31 @@
-#### Change interface IP address
-```Shell
+---
+title: 
+tags: []
+updated: 2021-09-30
+categories: []
+---#### Change interface IP address
+```bash
 ifconfig <INTERFACENAME> down
 ```
-```Shell
+```bash
 ifconfig <INTERFACENAME> <IPADDRESS> netmask <NETMASK> up
 ```
 
 #### Change Interface MAC Address
-```Shell
+```bash
 ifconfig <InterfaceName> down
 ```
-```Shell
+```bash
 ifconfig <InterfaceName> eth <MACAddress>
 ```
-```Shell
+```bash
 ifconfig up
 ```
 
 #### start DHCO on an interface.
-```Shell
+```bash
 ifconfig <InterfaceName> dhcp start
 ```
-```Shell
+```bash
 ifconfig <InterfaceName> dhcp release
 ```

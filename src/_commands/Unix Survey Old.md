@@ -1,4 +1,9 @@
-### Unix Survey Old
+---
+title: Unix
+tags: []
+updated: 2021-09-30
+categories: []
+--- Survey Old
 
 unset HISTFILE
 w

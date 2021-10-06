@@ -5,13 +5,14 @@ permalink: /cmds
 js: [mason-horizontal, cmds]
 ---
 
-<div class="flex flex-row flex-wrap justify-evenly">
+<div>
 	<button
 		class="px-1 m-1 transition-all ease-linear bg-gray-700 rounded-sm  active:animate-pulse active:bg-green-800 font-hack hover:bg-gray-600 hover:scale-110 shuffle"
 	>
 		Shuffle
 	</button>
-	{%- for cmd in site.commands -%} {% for category in cmd.categories | uniq -%}
+	{%- assign unique_categories = cmd.categories | uniq -%} {%- for cmd in site.commands -%} {% for
+	category in unique_categories -%}
 
 	<button
 		class="px-1 m-1 transition-all ease-linear bg-gray-700 rounded-sm  active:animate-pulse active:bg-green-800 hover:bg-gray-600 hover:scale-110 even:font-hack"
@@ -20,5 +21,8 @@ js: [mason-horizontal, cmds]
 		{{ category }}
 	</button>
 	{%- endfor -%} {%- endfor -%}
+
+	<div class="term-container">
+		{% for item in site.commands %} {{ item.content }} {% endfor %}
+	</div>
 </div>
-<div class="term-container">{% for item in site.commands %} {{ item.content }} {% endfor %}</div>

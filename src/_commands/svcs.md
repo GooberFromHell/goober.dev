@@ -1,22 +1,27 @@
-### svcs
+---
+title: svcs
+tags: []
+updated: 2021-09-30
+categories: []
+---
 
 #### Display servcie status.
-```Shell
+```bash
 svcs <ServiceName>
 ```
 
 #### Display a service's dependencies.
-```Shell
+```bash
 svcs -d <ServiceName>
 ```
 		
 #### Display current milestone. 
 ##### - It will be the one with the most current STIME.
-```Shell
+```bash
 svcs milestone*
 ```
 
 #### Dsplay all online services.
-```Shell
+```bash
 svcs -a | grep online
 ```

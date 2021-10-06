@@ -1,3 +1,3 @@
-{% if page.js %} {% for js in page.js %}
-<script type="text/javascript" src="{{ site.baseurl }}/assets/js/{{ js }}.js"></script>
-{% endfor %} {% endif %}
+{%- if page.js -%} {%- for script in page.js -%}
+<script type="text/javascript" src="assets/js/{{ script }}.js"></script>
+{%- endfor -%} {%- endif -%}

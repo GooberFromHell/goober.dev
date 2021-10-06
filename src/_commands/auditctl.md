@@ -1,10 +1,14 @@
 ---
-layout: page
+title: auditctl
+tags: []
+updated: 2021-09-30
+categories: []
 ---
+
 
 ### auditctl
 
-```Shell
-// Display audit policy rules
+```bash
+## Display audit policy rules
 auditctl -l
 ```

@@ -1,6 +1,12 @@
-### insserv
+---
+title: insserv
+tags: []
+updated: 2021-09-30
+categories: []
+---
 
-#### Display current runlevel start services.
-```Shell
+#### 
+```bash
+## Debian: Display current runlevel start services.
 insserv -s
 ```
