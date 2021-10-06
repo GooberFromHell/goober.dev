@@ -1,0 +1,11 @@
+more-info: https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/auditpol
+commands:
+   - description: Get all audit policies
+    code: ```auditpol /get /category:*```
+    categories: [auditing]
+   - description: Change subcategory policy
+    code: ```auditpol /set /subcategory:"<SubCategoryName>","<SubCategoryName>" /failure:<enable|disable> /success:<enable|disable>```
+    categories: [auditing, modification]
+   - description:  Check if Auditing is enabled.
+    code: ```psexec -s reg query "HKEY_LOCAL_MACHINE\Security\Policy\PolAdtEv"```
+    categories: [auditing, enumeration]
